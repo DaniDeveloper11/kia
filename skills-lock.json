@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "landing-page-generator": {
+      "source": "alirezarezvani/claude-skills",
+      "sourceType": "github",
+      "skillPath": "product-team/skills/landing-page-generator/SKILL.md",
+      "computedHash": "26ce3b8ccccf4d32bd39834490a5a7e7d9d0e430bbc2a526313a6b3c36e69365"
+    }
+  }
+}

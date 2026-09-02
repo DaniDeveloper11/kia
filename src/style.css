@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/*
+ * Tailwind v4 uses CSS-first config: brand tokens live here in @theme
+ * instead of tailwind.config.js. This is the convention already
+ * established by this repo's /template — kept for consistency.
+ * `navy` and `orange` map directly to the KIA Contractors logo.
+ */
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+
+  --color-navy-50: #eef0f7;
+  --color-navy-100: #d7dcec;
+  --color-navy-200: #aeb8d8;
+  --color-navy-300: #8695c4;
+  --color-navy-400: #5d71ab;
+  --color-navy-500: #3d5091;
+  --color-navy-600: #26346d; /* primary brand navy */
+  --color-navy-700: #1f2b5a;
+  --color-navy-800: #182147;
+  --color-navy-900: #121834;
+  --color-navy-950: #0a0e1e;
+
+  --color-orange-50: #fff5eb;
+  --color-orange-100: #ffe6c7;
+  --color-orange-200: #ffca8a;
+  --color-orange-300: #ffab52;
+  --color-orange-400: #fa9a33;
+  --color-orange-500: #f5871f; /* primary brand orange */
+  --color-orange-600: #d96f10;
+  --color-orange-700: #b3590c;
+  --color-orange-800: #8c460b;
+  --color-orange-900: #663307;
+
+  --color-concrete-50: #f7f7f6;
+  --color-concrete-100: #eeeeec;
+  --color-concrete-200: #dcdcd8;
+  --color-concrete-300: #c2c2bc;
+  --color-concrete-400: #9d9d95;
+  --color-concrete-500: #7d7d74;
+  --color-concrete-600: #63635b;
+  --color-concrete-700: #504f49;
+  --color-concrete-800: #3c3b37;
+  --color-concrete-900: #26251f;
+
+  --color-graphite-800: #21242c;
+  --color-graphite-900: #16181d;
+  --color-graphite-950: #0d0e11;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.01em;
+  }
+
+  /* Prevents unstyled flash of Alpine-controlled elements before hydration. */
+  [x-cloak] {
+    display: none !important;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-bold uppercase tracking-wide transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 bg-orange-500 text-navy-950 shadow-sm shadow-orange-900/20 hover:bg-orange-600 focus-visible:outline-orange-600;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-bold uppercase tracking-wide transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 bg-navy-900 text-white hover:bg-navy-800 focus-visible:outline-navy-600;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-bold uppercase tracking-wide transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 border-2 border-navy-900 bg-transparent text-navy-900 hover:bg-navy-900 hover:text-white focus-visible:outline-navy-600;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-bold uppercase tracking-wide transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 border-2 border-white/70 bg-transparent text-white hover:bg-white hover:text-navy-900 focus-visible:outline-white;
+  }
+
+  /* orange-700, not orange-500, so the 12px bold label clears 4.5:1 on white/light backgrounds. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-orange-700;
+  }
+
+  .section-title {
+    @apply text-3xl font-black uppercase tracking-tight text-navy-900 sm:text-4xl;
+  }
+
+  .icon-tile {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-navy-900 text-orange-500;
+  }
+}
