@@ -4,22 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Structural Concrete & Shotcrete Contractors | KIA Inc.</title>
+    <title>California Structural Concrete &amp; Shotcrete Contractors | KIA Inc.</title>
     <meta
       name="description"
-      content="Nationwide structural concrete & shotcrete contractor. Foundations, retaining walls, shoring, seismic retrofits. Licensed CA #991941. Get a free estimate today."
+      content="California structural concrete &amp; shotcrete contractor serving the entire state. Foundations, retaining walls, shoring, seismic retrofits. Licensed CA #991941. Get a free estimate today."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.kiacontractorsinc.com/" />
     <meta name="theme-color" content="#26346d" />
 
+    <!-- Geo / local targeting -->
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="Fresno, California" />
+    <meta name="geo.position" content="36.7378;-119.7871" />
+    <meta name="ICBM" content="36.7378, -119.7871" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="KIA Contractors Inc." />
-    <meta property="og:title" content="Structural Concrete & Shotcrete Contractors | KIA Inc." />
+    <meta property="og:title" content="California Structural Concrete &amp; Shotcrete Contractors | KIA Inc." />
     <meta
       property="og:description"
-      content="Structural concrete and shotcrete (wet & dry mix) for commercial, industrial, and infrastructure projects nationwide. Licensed CA #991941."
+      content="Structural concrete and shotcrete (wet &amp; dry mix) for commercial, industrial, and infrastructure projects across California. Licensed CA #991941, based in Fresno."
     />
     <meta property="og:url" content="https://www.kiacontractorsinc.com/" />
     <meta property="og:image" content="https://www.kiacontractorsinc.com/images/brand/og-image.png" />
@@ -28,10 +35,10 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Structural Concrete & Shotcrete Contractors | KIA Inc." />
+    <meta name="twitter:title" content="California Structural Concrete &amp; Shotcrete Contractors | KIA Inc." />
     <meta
       name="twitter:description"
-      content="Structural concrete and shotcrete (wet & dry mix) nationwide. Licensed CA #991941. Request a free project estimate."
+      content="Structural concrete and shotcrete (wet &amp; dry mix) statewide in California. Licensed CA #991941. Request a free project estimate."
     />
     <meta name="twitter:image" content="https://www.kiacontractorsinc.com/images/brand/og-image.png" />
 
@@ -51,7 +58,7 @@
         "@id": "https://www.kiacontractorsinc.com/#organization",
         "name": "KIA Contractors Inc.",
         "alternateName": "KIA Contractors",
-        "description": "Structural concrete and shotcrete specialist contractor serving general contractors, developers, and public agencies nationwide. Licensed CA #991941.",
+        "description": "Structural concrete and shotcrete specialist contractor serving general contractors, developers, and public agencies throughout California. Headquartered in Fresno. Licensed CA #991941.",
         "url": "https://www.kiacontractorsinc.com/",
         "image": "https://www.kiacontractorsinc.com/images/brand/og-image.png",
         "logo": "https://www.kiacontractorsinc.com/images/brand/logo.png",
@@ -66,9 +73,63 @@
           "postalCode": "93706",
           "addressCountry": "US"
         },
+        "knowsAbout": [
+          "Structural Concrete",
+          "Reinforced Concrete Structures",
+          "Structural Shotcrete",
+          "Gunite Application",
+          "Caissons",
+          "Foundation - Slab on Grade",
+          "Structural Slabs",
+          "Retaining Walls",
+          "Retaining Wall Systems",
+          "Subterranean Parking Structures",
+          "Hillside Concrete Construction",
+          "Soft Story Retrofit",
+          "Seismic Retrofit",
+          "Concrete Repair and Restoration",
+          "Complex Concrete Services",
+          "New Construction",
+          "Shotcrete Pool Shells",
+          "Waterway and Marine Construction",
+          "Earthwork",
+          "Exterior Improvements",
+          "Special Construction",
+          "Concrete Formwork",
+          "CSI Division 03 Concrete",
+          "CSI Division 06 Wood, Plastics and Composites",
+          "CSI Division 13 Special Construction",
+          "CSI Division 31 Earthwork",
+          "CSI Division 32 Exterior Improvements",
+          "CSI Division 35 Waterway and Marine Construction",
+          "Apartments and Condominiums",
+          "Single Family Residential",
+          "Hotel and Motel Construction",
+          "Office Building Construction",
+          "Mixed Use Development",
+          "Retail Store Construction",
+          "Parking Garage Construction",
+          "Parking Lots",
+          "Fitness Center Construction",
+          "Storage Facility and Warehouse Construction",
+          "Swimming Pool Construction"
+        ],
         "areaServed": {
-          "@type": "Country",
-          "name": "United States"
+          "@type": "State",
+          "name": "California",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "United States"
+          }
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.7378,
+          "longitude": -119.7871
+        },
+        "serviceArea": {
+          "@type": "AdministrativeArea",
+          "name": "California"
         },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
@@ -103,6 +164,7 @@
 
         <ul class="hidden items-center gap-7 text-sm font-bold uppercase tracking-wide text-navy-700 lg:flex">
           <li><a href="#services" class="transition-colors hover:text-orange-700">Services</a></li>
+          <li><a href="#markets" class="transition-colors hover:text-orange-700">Markets</a></li>
           <li><a href="#why-us" class="transition-colors hover:text-orange-700">Why KIA</a></li>
           <li><a href="#process" class="transition-colors hover:text-orange-700">Process</a></li>
           <li><a href="#projects" class="transition-colors hover:text-orange-700">Projects</a></li>
@@ -138,6 +200,7 @@
       >
         <ul class="flex flex-col gap-4 text-sm font-bold uppercase tracking-wide text-navy-700">
           <li><a href="#services" @click="open = false" class="block py-1">Services</a></li>
+          <li><a href="#markets" @click="open = false" class="block py-1">Markets</a></li>
           <li><a href="#why-us" @click="open = false" class="block py-1">Why KIA</a></li>
           <li><a href="#process" @click="open = false" class="block py-1">Process</a></li>
           <li><a href="#projects" @click="open = false" class="block py-1">Projects</a></li>
@@ -178,9 +241,8 @@
 
             <p class="mt-6 max-w-xl text-lg leading-relaxed text-navy-100">
               KIA Contractors Inc. designs and places structural concrete and shotcrete for
-              general contractors, developers, and public agencies nationwide — foundations,
-              retaining walls, shoring, and seismic retrofits delivered to spec, from a crew
-              that treats your schedule like our own.
+              general contractors and developers — retaining walls, shoring, and seismic
+              retrofits delivered to spec, from a crew that treats your schedule like our own.
             </p>
 
             <div class="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -201,7 +263,7 @@
               </span>
               <span class="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/5 px-3 py-2 text-xs font-bold uppercase tracking-wide text-white">
                 <i data-lucide="map-pin" class="h-4 w-4" aria-hidden="true"></i>
-                Nationwide Coverage
+                Statewide
               </span>
             </div>
           </div>
@@ -258,10 +320,10 @@
             <p class="mt-3 text-3xl font-black text-white sm:text-4xl" x-text="display">0</p>
             <p class="mt-1 text-xs font-bold uppercase tracking-wide text-navy-200">On-Time Delivery</p>
           </div>
-          <div class="col-span-2 text-center sm:col-span-1" x-data="counter(32, { suffix: '+' })">
+          <div class="col-span-2 text-center sm:col-span-1" x-data="counter(58)">
             <i data-lucide="map-pin" class="mx-auto h-7 w-7 text-orange-500" aria-hidden="true"></i>
             <p class="mt-3 text-3xl font-black text-white sm:text-4xl" x-text="display">0</p>
-            <p class="mt-1 text-xs font-bold uppercase tracking-wide text-navy-200">States With Active Work</p>
+            <p class="mt-1 text-xs font-bold uppercase tracking-wide text-navy-200">California Counties Covered</p>
           </div>
         </div>
       </section>
@@ -278,7 +340,8 @@
           <h2 class="section-title mt-4">Structural Concrete &amp; Shotcrete Services</h2>
           <p class="mt-4 text-concrete-600">
             From the first footing to the final finish coat, KIA crews handle the structural
-            concrete and shotcrete scope general contractors can't afford to get wrong.
+            concrete and shotcrete scope general contractors can’t afford to get wrong &mdash;
+            on jobs statewide.
           </p>
         </div>
 
@@ -302,6 +365,10 @@
               </li>
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Subterranean parking structures
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
                 Mix design per engineer specs
               </li>
               <li class="flex items-start gap-2">
@@ -314,15 +381,19 @@
           <!-- Service 2 -->
           <div class="rounded-lg border border-concrete-200 p-7 transition-shadow hover:shadow-lg">
             <span class="icon-tile"><i data-lucide="spray-can" class="h-6 w-6" aria-hidden="true"></i></span>
-            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Shotcrete (Wet &amp; Dry Mix)</h3>
+            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Shotcrete &amp; Gunite (Wet &amp; Dry Mix)</h3>
             <p class="mt-2 text-sm leading-relaxed text-concrete-600">
               Certified wet-mix and dry-mix shotcrete crews for retaining walls, pool shells,
-              and slope stabilization where conventional formwork isn't practical.
+              and slope stabilization where conventional formwork isn’t practical.
             </p>
             <ul class="mt-4 space-y-2 text-sm text-concrete-700">
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
                 Wet-mix &amp; dry-mix application
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Gunite application
               </li>
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
@@ -335,6 +406,10 @@
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
                 Slope &amp; vertical surface application
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Reservoir, canal &amp; marine linings
               </li>
             </ul>
           </div>
@@ -370,16 +445,12 @@
           <!-- Service 4 -->
           <div class="rounded-lg border border-concrete-200 p-7 transition-shadow hover:shadow-lg">
             <span class="icon-tile"><i data-lucide="brick-wall" class="h-6 w-6" aria-hidden="true"></i></span>
-            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Retaining &amp; Soil Nail Walls / Shoring</h3>
+            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Retaining Walls &amp; Shoring</h3>
             <p class="mt-2 text-sm leading-relaxed text-concrete-600">
-              Earth retention systems — from soil nail and tieback walls to temporary shoring —
+              Earth retention systems — from soil nail walls to temporary shoring —
               engineered to protect adjacent structures and keep excavations safe.
             </p>
             <ul class="mt-4 space-y-2 text-sm text-concrete-700">
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
-                Soil nail &amp; tieback walls
-              </li>
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
                 Shotcrete-faced retaining walls
@@ -391,6 +462,10 @@
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
                 Lagging &amp; soldier pile systems
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Hillside concrete construction
               </li>
             </ul>
           </div>
@@ -452,12 +527,12 @@
           </div>
 
           <!-- Service 7 -->
-          <div class="rounded-lg border border-concrete-200 p-7 transition-shadow hover:shadow-lg md:col-span-2 lg:col-span-1">
+          <div class="rounded-lg border border-concrete-200 p-7 transition-shadow hover:shadow-lg">
             <span class="icon-tile"><i data-lucide="square-stack" class="h-6 w-6" aria-hidden="true"></i></span>
-            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Slabs &amp; Tilt-Up</h3>
+            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Slabs</h3>
             <p class="mt-2 text-sm leading-relaxed text-concrete-600">
-              Precision-finished slabs-on-grade and tilt-up wall panels for warehouses,
-              manufacturing plants, and big-box commercial construction.
+              Precision-finished slabs-on-grade placed to flatness and levelness tolerances, from
+              subgrade prep through the final finish.
             </p>
             <ul class="mt-4 space-y-2 text-sm text-concrete-700">
               <li class="flex items-start gap-2">
@@ -466,15 +541,71 @@
               </li>
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
-                Tilt-up panel casting &amp; bracing
+                Subgrade &amp; vapor barrier prep
               </li>
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
-                Panel erection coordination
+                Rebar &amp; welded wire reinforcement
               </li>
               <li class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
-                Joint &amp; control cutting
+                Control joints &amp; sawcutting
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 8 -->
+          <div class="rounded-lg border border-concrete-200 p-7 transition-shadow hover:shadow-lg">
+            <span class="icon-tile"><i data-lucide="drill" class="h-6 w-6" aria-hidden="true"></i></span>
+            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Caissons &amp; Deep Foundations</h3>
+            <p class="mt-2 text-sm leading-relaxed text-concrete-600">
+              Drilled caissons and deep pier systems for sites where spread footings won&rsquo;t
+              carry the load — hillside builds, poor soils, and high-rise column loads.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-concrete-700">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Drilled caissons &amp; piers
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Friction &amp; end-bearing shafts
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Casing &amp; slurry placement
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Geotech &amp; inspection coordination
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 9 -->
+          <div class="rounded-lg border border-concrete-200 p-7 transition-shadow hover:shadow-lg">
+            <span class="icon-tile"><i data-lucide="waves" class="h-6 w-6" aria-hidden="true"></i></span>
+            <h3 class="mt-5 text-lg font-black uppercase text-navy-900">Pools</h3>
+            <p class="mt-2 text-sm leading-relaxed text-concrete-600">
+              Shotcrete pool and spa shells for residential, resort, and commercial aquatic
+              projects — shot by the same ACI 506 nozzlemen who run our structural work.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-concrete-700">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Shotcrete pool &amp; spa shells
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Steel placement per engineer specs
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Raised bond beams &amp; vanishing edges
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>
+                Pool decks &amp; surrounding hardscape
               </li>
             </ul>
           </div>
@@ -482,9 +613,75 @@
       </section>
 
       <!-- =========================================================
+           MARKETS WE SERVE
+      ========================================================== -->
+      <section id="markets" class="bg-concrete-50 py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto max-w-2xl text-center">
+            <span class="eyebrow justify-center">
+              <i data-lucide="layout-grid" class="h-4 w-4" aria-hidden="true"></i>
+              Markets We Serve
+            </span>
+            <h2 class="section-title mt-4">Building Types We Pour For</h2>
+            <p class="mt-4 text-concrete-600">
+              Commercial, residential, and institutional project experience across California —
+              from podium decks to pool shells.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="building-2" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Apartments &amp; Condominiums</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="home" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Single Family Residential</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="hotel" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Hotel / Motel</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="building" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Office Building</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="layout-grid" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Mixed Use</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="store" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Retail Store</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="car" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Parking Garage</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="square-parking" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Parking Lots</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="dumbbell" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Fitness Center</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="warehouse" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Storage Facility / Warehouse</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border border-concrete-200 px-4 py-3">
+              <i data-lucide="waves" class="h-5 w-5 shrink-0 text-orange-500" aria-hidden="true"></i>
+              <span class="text-sm font-bold text-navy-900">Swimming Pool</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
            WHY CHOOSE KIA (alternating)
       ========================================================== -->
-      <section id="why-us" class="bg-concrete-50 py-24">
+      <section id="why-us" class="py-24">
         <div class="mx-auto max-w-7xl px-6">
           <div class="mx-auto max-w-2xl text-center">
             <span class="eyebrow justify-center">
@@ -557,7 +754,7 @@
                 <span class="icon-tile"><i data-lucide="shield-check" class="h-6 w-6" aria-hidden="true"></i></span>
                 <h3 class="mt-5 text-2xl font-black uppercase text-navy-900">OSHA-Compliant On Every Site</h3>
                 <p class="mt-3 leading-relaxed text-concrete-600">
-                  Fall protection, confined space, and silica dust controls aren't optional on
+                  Fall protection, confined space, and silica dust controls aren’t optional on
                   our crews. Every jobsite runs under a documented safety plan, daily toolbox
                   talks, and full PPE compliance — protecting your schedule as much as our people.
                 </p>
@@ -581,7 +778,7 @@
                 <h3 class="mt-5 text-2xl font-black uppercase text-navy-900">Built To Pass Inspection The First Time</h3>
                 <p class="mt-3 leading-relaxed text-concrete-600">
                   Every placement is backed by third-party testing coordination, documented QC
-                  checkpoints, and a workmanship warranty — so you're not chasing rework after
+                  checkpoints, and a workmanship warranty — so you’re not chasing rework after
                   the crew leaves.
                 </p>
               </div>
@@ -601,7 +798,8 @@
           </span>
           <h2 class="section-title mt-4">Our Process</h2>
           <p class="mt-4 text-concrete-600">
-            A consistent, documented sequence on every job — from first call to closeout.
+            A consistent, documented sequence on every statewide job — from first call to
+            closeout.
           </p>
         </div>
 
@@ -631,7 +829,7 @@
             <span class="icon-tile absolute right-6 top-6"><i data-lucide="file-signature" class="h-6 w-6" aria-hidden="true"></i></span>
             <h3 class="mt-2 text-lg font-black uppercase text-navy-900">Planning &amp; Permits</h3>
             <p class="mt-2 text-sm leading-relaxed text-concrete-600">
-              We coordinate permits, submittals, and mix designs with your GC and the engineer
+              We coordinate submittals and mix designs with your GC and the engineer
               of record before crews mobilize.
             </p>
           </div>
@@ -651,7 +849,7 @@
             <span class="icon-tile absolute right-6 top-6"><i data-lucide="clipboard-check" class="h-6 w-6" aria-hidden="true"></i></span>
             <h3 class="mt-2 text-lg font-black uppercase text-navy-900">Quality Control</h3>
             <p class="mt-2 text-sm leading-relaxed text-concrete-600">
-              In-house QC checkpoints and third-party testing coordination confirm strength,
+              In-house QC checkpoints and testing coordination confirm strength,
               cover, and finish before we call it done.
             </p>
           </div>
@@ -681,7 +879,7 @@
             <h2 class="section-title mt-4 text-white">Concrete &amp; Shotcrete In The Field</h2>
             <p class="mt-4 text-navy-200">
               A sample of structural concrete and shotcrete work delivered for general
-              contractors and developers across the country.
+              contractors and developers statewide.
             </p>
           </div>
 
@@ -933,7 +1131,7 @@
             <span class="icon-tile"><i data-lucide="file-check" class="h-6 w-6" aria-hidden="true"></i></span>
             <h3 class="mt-4 font-black uppercase text-navy-900">Liability &amp; Workers&rsquo; Comp Insurance</h3>
             <p class="mt-2 text-sm leading-relaxed text-concrete-600">
-              Comprehensive general liability and workers' compensation coverage carried on
+              Comprehensive general liability and workers’ compensation coverage carried on
               every project, with certificates issued on request.
             </p>
           </div>
@@ -963,6 +1161,43 @@
               Bonding capacity to support commercial, industrial, and public infrastructure
               contracts of scale.
             </p>
+          </div>
+        </div>
+
+        <!-- CSI divisions -->
+        <div class="mt-14 rounded-lg border border-concrete-200 bg-concrete-50 p-6 sm:p-8">
+          <div class="flex flex-wrap items-baseline justify-between gap-3">
+            <h3 class="flex items-center gap-2 text-sm font-black uppercase tracking-widest text-navy-900">
+              <i data-lucide="file-code" class="h-4 w-4 text-orange-500" aria-hidden="true"></i>
+              Our CSI Divisions
+            </h3>
+            <p class="text-xs text-concrete-600">MasterFormat divisions we bid and self-perform</p>
+          </div>
+          <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="flex items-baseline gap-3 rounded-md bg-white px-4 py-3">
+              <span class="shrink-0 font-mono text-xs font-bold tracking-tight text-orange-600">03 00 00</span>
+              <span class="text-sm font-bold text-navy-900">Concrete</span>
+            </div>
+            <div class="flex items-baseline gap-3 rounded-md bg-white px-4 py-3">
+              <span class="shrink-0 font-mono text-xs font-bold tracking-tight text-orange-600">06 00 00</span>
+              <span class="text-sm font-bold text-navy-900">Wood, Plastics &amp; Composites</span>
+            </div>
+            <div class="flex items-baseline gap-3 rounded-md bg-white px-4 py-3">
+              <span class="shrink-0 font-mono text-xs font-bold tracking-tight text-orange-600">13 00 00</span>
+              <span class="text-sm font-bold text-navy-900">Special Construction</span>
+            </div>
+            <div class="flex items-baseline gap-3 rounded-md bg-white px-4 py-3">
+              <span class="shrink-0 font-mono text-xs font-bold tracking-tight text-orange-600">31 00 00</span>
+              <span class="text-sm font-bold text-navy-900">Earthwork</span>
+            </div>
+            <div class="flex items-baseline gap-3 rounded-md bg-white px-4 py-3">
+              <span class="shrink-0 font-mono text-xs font-bold tracking-tight text-orange-600">32 00 00</span>
+              <span class="text-sm font-bold text-navy-900">Exterior Improvements</span>
+            </div>
+            <div class="flex items-baseline gap-3 rounded-md bg-white px-4 py-3">
+              <span class="shrink-0 font-mono text-xs font-bold tracking-tight text-orange-600">35 00 00</span>
+              <span class="text-sm font-bold text-navy-900">Waterway &amp; Marine Construction</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1044,60 +1279,155 @@
       </section>
 
       <!-- =========================================================
-           COVERAGE / NATIONWIDE SERVICE
+           COVERAGE / CALIFORNIA SERVICE AREA
       ========================================================== -->
       <section id="coverage" class="mx-auto max-w-7xl px-6 py-24">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <span class="eyebrow">
-              <i data-lucide="globe" class="h-4 w-4" aria-hidden="true"></i>
-              Nationwide Service
+              <i data-lucide="map-pin" class="h-4 w-4" aria-hidden="true"></i>
+              California Service Area
             </span>
-            <h2 class="section-title mt-4">Structural Concrete Crews, Wherever The Project Is</h2>
+            <h2 class="section-title mt-4">Every Project We Build Happens In California</h2>
             <p class="mt-4 leading-relaxed text-concrete-600">
-              KIA Contractors Inc. is licensed and equipped to mobilize structural concrete and
-              shotcrete crews anywhere in the United States. From our California headquarters,
-              we've delivered projects across the West, Southwest, Mountain, and Central
-              regions — with the bonding capacity and crew depth to take on multi-state programs.
+              KIA Contractors Inc. is a California contractor, licensed
+              <strong class="font-bold text-navy-900">CA #991941</strong> and headquartered in
+              Fresno. We self-perform structural concrete and shotcrete
+              <strong class="font-bold text-navy-900">exclusively within the state</strong> — from
+              the Bay Area and the Central Valley down through Los Angeles, the Inland Empire and
+              San Diego. Staying inside California is deliberate: same-day mobilization, crews who
+              know Title 24 and CBC seismic detailing, and inspectors who already know our work.
             </p>
-            <a href="#contact" class="btn-secondary mt-6">
+
+            <dl class="mt-8 grid grid-cols-3 gap-4 border-y border-concrete-200 py-6">
+              <div>
+                <dt class="text-xs font-bold uppercase tracking-wide text-concrete-600">Coverage</dt>
+                <dd class="mt-1 text-2xl font-black text-navy-900">100% CA</dd>
+              </div>
+              <div>
+                <dt class="text-xs font-bold uppercase tracking-wide text-concrete-600">Mobilization</dt>
+                <dd class="mt-1 text-2xl font-black text-navy-900">24&ndash;48 hrs</dd>
+              </div>
+              <div>
+                <dt class="text-xs font-bold uppercase tracking-wide text-concrete-600">Base</dt>
+                <dd class="mt-1 text-2xl font-black text-navy-900">Fresno</dd>
+              </div>
+            </dl>
+
+            <ul class="mt-6 grid gap-x-6 gap-y-2 text-sm text-concrete-600 sm:grid-cols-2">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>Bay Area &amp; Sacramento</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>Central Valley</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>Central Coast</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>Greater Los Angeles</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>Inland Empire</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-orange-500" aria-hidden="true"></i>San Diego County</li>
+            </ul>
+
+            <a href="#contact" class="btn-secondary mt-8">
               <i data-lucide="map-pin" class="h-4 w-4" aria-hidden="true"></i>
               Check Coverage For Your Project
             </a>
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
-            <div class="rounded-lg border border-concrete-200 p-5">
-              <i data-lucide="map-pin" class="h-5 w-5 text-orange-500" aria-hidden="true"></i>
-              <h3 class="mt-3 text-sm font-black uppercase text-navy-900">West Coast</h3>
-              <p class="mt-1 text-xs text-concrete-600">CA · OR · WA</p>
-            </div>
-            <div class="rounded-lg border border-concrete-200 p-5">
-              <i data-lucide="map-pin" class="h-5 w-5 text-orange-500" aria-hidden="true"></i>
-              <h3 class="mt-3 text-sm font-black uppercase text-navy-900">Southwest</h3>
-              <p class="mt-1 text-xs text-concrete-600">AZ · NV · NM · UT</p>
-            </div>
-            <div class="rounded-lg border border-concrete-200 p-5">
-              <i data-lucide="map-pin" class="h-5 w-5 text-orange-500" aria-hidden="true"></i>
-              <h3 class="mt-3 text-sm font-black uppercase text-navy-900">Mountain</h3>
-              <p class="mt-1 text-xs text-concrete-600">CO · ID · WY · MT</p>
-            </div>
-            <div class="rounded-lg border border-concrete-200 p-5">
-              <i data-lucide="map-pin" class="h-5 w-5 text-orange-500" aria-hidden="true"></i>
-              <h3 class="mt-3 text-sm font-black uppercase text-navy-900">South Central</h3>
-              <p class="mt-1 text-xs text-concrete-600">TX · OK</p>
-            </div>
-            <div class="rounded-lg border border-concrete-200 p-5">
-              <i data-lucide="map-pin" class="h-5 w-5 text-orange-500" aria-hidden="true"></i>
-              <h3 class="mt-3 text-sm font-black uppercase text-navy-900">Midwest</h3>
-              <p class="mt-1 text-xs text-concrete-600">IL · MI · OH · IN</p>
-            </div>
-            <div class="rounded-lg border border-concrete-200 p-5">
-              <i data-lucide="map-pin" class="h-5 w-5 text-orange-500" aria-hidden="true"></i>
-              <h3 class="mt-3 text-sm font-black uppercase text-navy-900">Southeast &amp; Northeast</h3>
-              <p class="mt-1 text-xs text-concrete-600">FL · GA · NC · NY · PA</p>
-            </div>
-          </div>
+          <!-- Coverage map -->
+          <figure class="relative overflow-hidden rounded-lg border border-concrete-200 bg-navy-950 p-6 sm:p-8">
+            <figcaption class="flex items-center justify-between gap-4">
+              <span class="text-xs font-black uppercase tracking-widest text-white">
+                Active Project Map
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-md bg-orange-500/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-orange-400">
+                <span class="h-1.5 w-1.5 rounded-full bg-orange-500"></span>
+                California Only
+              </span>
+            </figcaption>
+
+            <svg
+              viewBox="0 0 440 512"
+              class="mx-auto mt-6 h-auto w-full max-w-sm"
+              role="img"
+              aria-labelledby="coverage-map-title coverage-map-desc"
+            >
+              <title id="coverage-map-title">Map of California highlighting KIA Contractors' service area</title>
+              <desc id="coverage-map-desc">
+                The state of California is highlighted as the single service area, with project
+                markers in Sacramento, the San Francisco Bay Area, Fresno (headquarters),
+                Bakersfield, Los Angeles, the Inland Empire and San Diego.
+              </desc>
+
+              <defs>
+                <linearGradient id="ca-fill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.30" />
+                  <stop offset="100%" stop-color="#f97316" stop-opacity="0.12" />
+                </linearGradient>
+              </defs>
+
+              <!-- California outline -->
+              <path
+                d="M18 11 L190 11 L190 166 L409 372 L415 385 L427 414 L406 490 L307 500 L300 466 L263 438 L250 423 L170 406 L165 376 L112 289 L108 269 L92 227 L67 202 L10 91 Z"
+                fill="url(#ca-fill)"
+                stroke="#f97316"
+                stroke-width="3"
+                stroke-linejoin="round"
+              />
+
+              <!-- Project markers -->
+              <g fill="#f97316">
+                <circle cx="129" cy="187" r="14" opacity="0.18">
+                  <animate attributeName="r" values="7;16;7" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.35;0;0.35" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="129" cy="187" r="5" />
+
+                <circle cx="100" cy="232" r="14" opacity="0.18">
+                  <animate attributeName="r" values="7;16;7" dur="3s" begin="0.4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.35;0;0.35" dur="3s" begin="0.4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="100" cy="232" r="5" />
+
+                <circle cx="229" cy="354" r="14" opacity="0.18">
+                  <animate attributeName="r" values="7;16;7" dur="3s" begin="0.8s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.35;0;0.35" dur="3s" begin="0.8s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="229" cy="354" r="5" />
+
+                <circle cx="261" cy="421" r="14" opacity="0.18">
+                  <animate attributeName="r" values="7;16;7" dur="3s" begin="1.2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.35;0;0.35" dur="3s" begin="1.2s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="261" cy="421" r="5" />
+
+                <circle cx="296" cy="430" r="5" />
+
+                <circle cx="300" cy="484" r="14" opacity="0.18">
+                  <animate attributeName="r" values="7;16;7" dur="3s" begin="1.6s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.35;0;0.35" dur="3s" begin="1.6s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="300" cy="484" r="5" />
+              </g>
+
+              <!-- Headquarters: Fresno -->
+              <g>
+                <circle cx="198" cy="283" r="20" fill="#f97316" opacity="0.2" />
+                <circle cx="198" cy="283" r="9" fill="#ffffff" stroke="#f97316" stroke-width="5" />
+              </g>
+
+              <!-- Labels -->
+              <g fill="#ffffff" font-size="15" font-weight="700" font-family="inherit">
+                <text x="143" y="192">Sacramento</text>
+                <text x="114" y="237">Bay Area</text>
+                <text x="216" y="288" text-anchor="end">Fresno (HQ)</text>
+                <text x="243" y="359">Bakersfield</text>
+                <text x="275" y="426" text-anchor="end">Los Angeles</text>
+                <text x="310" y="435">Inland Empire</text>
+                <text x="314" y="489">San Diego</text>
+              </g>
+            </svg>
+
+            <p class="mt-6 text-center text-xs leading-relaxed text-concrete-400">
+              Statewide coverage from Del Norte to Imperial County. Outside California? We can refer
+              you to a vetted structural concrete partner.
+            </p>
+          </figure>
         </div>
       </section>
 
@@ -1111,7 +1441,7 @@
           </h2>
           <p class="mx-auto mt-4 max-w-2xl text-lg text-navy-900">
             Send us your drawings and timeline — our estimators respond within one business day
-            with a scoped, itemized proposal.
+            with a scoped, itemized proposal, statewide.
           </p>
           <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md bg-navy-900 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white hover:bg-navy-800">
@@ -1155,7 +1485,7 @@
           <!-- Q2 -->
           <div class="py-5">
             <button @click="open = open === 1 ? null : 1" class="flex w-full items-center justify-between gap-4 text-left" :aria-expanded="open === 1" aria-controls="faq-panel-1">
-              <span class="font-bold text-navy-900">What's the difference between wet-mix and dry-mix shotcrete?</span>
+              <span class="font-bold text-navy-900">What’s the difference between wet-mix and dry-mix shotcrete?</span>
               <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-orange-500 transition-transform" :class="{ 'rotate-180': open === 1 }" aria-hidden="true"></i>
             </button>
             <div id="faq-panel-1" x-show="open === 1" x-transition x-cloak class="mt-3 text-sm leading-relaxed text-concrete-600">
@@ -1212,10 +1542,10 @@
               <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-orange-500 transition-transform" :class="{ 'rotate-180': open === 5 }" aria-hidden="true"></i>
             </button>
             <div id="faq-panel-5" x-show="open === 5" x-transition x-cloak class="mt-3 text-sm leading-relaxed text-concrete-600">
-              KIA Contractors Inc. is licensed and equipped to mobilize nationwide. We're
-              headquartered in California with active project experience across the West,
-              Southwest, Mountain, and Central regions, and we take on multi-state programs on
-              request.
+              We work exclusively in California. Headquartered in Fresno and licensed
+              CA #991941, we mobilize statewide — the Bay Area, Sacramento, the Central Valley and
+              Central Coast, Greater Los Angeles, the Inland Empire and San Diego County — usually
+              within 24 to 48 hours of award.
             </div>
           </div>
 
@@ -1260,7 +1590,7 @@
             },
             {
               "@type": "Question",
-              "name": "What's the difference between wet-mix and dry-mix shotcrete?",
+              "name": "What’s the difference between wet-mix and dry-mix shotcrete?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Wet-mix shotcrete is pre-mixed and pumped to the nozzle, giving more consistent output for large-volume placements. Dry-mix is mixed with water at the nozzle, offering more control for smaller or hard-to-access areas like repair work. We run certified crews for both and recommend the right method based on your application."
@@ -1295,7 +1625,7 @@
               "name": "What areas do you service?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "KIA Contractors Inc. is licensed and equipped to mobilize nationwide. We're headquartered in California with active project experience across the West, Southwest, Mountain, and Central regions, and we take on multi-state programs on request."
+                "text": "We work exclusively in California. Headquartered in Fresno and licensed CA #991941, we mobilize statewide \u2014 the Bay Area, Sacramento, the Central Valley and Central Coast, Greater Los Angeles, the Inland Empire and San Diego County \u2014 usually within 24 to 48 hours of award."
               }
             },
             {
@@ -1330,7 +1660,8 @@
             </span>
             <h2 class="section-title mt-4">Tell Us About Your Project</h2>
             <p class="mt-4 text-concrete-600">
-              Share the scope and timeline — a KIA estimator will follow up within one business day.
+              Share the scope and timeline — a KIA estimator will follow up within one business
+              day, wherever your site is in California.
             </p>
           </div>
 
@@ -1414,44 +1745,34 @@
                   >
                     <option value="" disabled selected>Select a service</option>
                     <option value="structural-concrete">Structural Concrete</option>
-                    <option value="shotcrete">Shotcrete (Wet &amp; Dry Mix)</option>
+                    <option value="shotcrete">Shotcrete &amp; Gunite (Wet &amp; Dry Mix)</option>
                     <option value="foundations">Foundations &amp; Footings</option>
-                    <option value="retaining-shoring">Retaining Walls / Shoring</option>
+                    <option value="caissons">Caissons &amp; Deep Foundations</option>
+                    <option value="retaining-shoring">Retaining Walls &amp; Shoring</option>
                     <option value="repair">Concrete Repair &amp; Restoration</option>
                     <option value="seismic">Seismic Retrofitting</option>
-                    <option value="slabs-tiltup">Slabs &amp; Tilt-Up</option>
+                    <option value="slabs">Slabs</option>
+                    <option value="pools">Pools</option>
                     <option value="other">Other / Not Sure</option>
                   </select>
                   <p x-show="errors.projectType" x-cloak x-text="errors.projectType" class="mt-1.5 text-xs text-red-600"></p>
                 </div>
 
                 <div class="sm:col-span-1">
-                  <label for="state" class="mb-2 flex items-center gap-2 text-sm font-bold text-navy-900">
+                  <label for="location" class="mb-2 flex items-center gap-2 text-sm font-bold text-navy-900">
                     <i data-lucide="map-pin" class="h-4 w-4 text-orange-500" aria-hidden="true"></i>
-                    State / Location
+                    Project Location
                   </label>
-                  <select
-                    id="state"
-                    x-model="form.state"
-                    class="w-full rounded-md border bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                    :class="errors.state ? 'border-red-400 focus:ring-red-300' : 'border-concrete-300 focus:ring-navy-400'"
-                  >
-                    <option value="" disabled selected>Select a state</option>
-                    <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
-                    <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
-                    <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
-                    <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
-                    <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
-                    <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
-                    <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
-                    <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
-                    <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
-                    <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
-                    <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
-                    <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
-                    <option>Wisconsin</option><option>Wyoming</option><option>Washington, D.C.</option>
-                  </select>
-                  <p x-show="errors.state" x-cloak x-text="errors.state" class="mt-1.5 text-xs text-red-600"></p>
+                  <input
+                    id="location"
+                    type="text"
+                    x-model="form.location"
+                    autocomplete="address-level2"
+                    placeholder="City or county in California"
+                    class="w-full rounded-md border px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                    :class="errors.location ? 'border-red-400 focus:ring-red-300' : 'border-concrete-300 focus:ring-navy-400'"
+                  />
+                  <p x-show="errors.location" x-cloak x-text="errors.location" class="mt-1.5 text-xs text-red-600"></p>
                 </div>
 
                 <div class="sm:col-span-2">
@@ -1536,7 +1857,7 @@
             />
             <p class="mt-4 text-sm leading-relaxed text-concrete-400">
               Structural concrete and shotcrete specialists serving general contractors,
-              developers, and public agencies nationwide.
+              developers, and public agencies statewide.
             </p>
             <p class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-orange-500">
               <i data-lucide="badge-check" class="h-4 w-4" aria-hidden="true"></i>
@@ -1559,24 +1880,27 @@
             <h3 class="text-xs font-bold uppercase tracking-widest text-white">Services</h3>
             <ul class="mt-4 space-y-2.5 text-sm">
               <li><a href="#services" class="hover:text-orange-500">Structural Concrete</a></li>
-              <li><a href="#services" class="hover:text-orange-500">Shotcrete (Wet &amp; Dry Mix)</a></li>
+              <li><a href="#services" class="hover:text-orange-500">Shotcrete &amp; Gunite</a></li>
               <li><a href="#services" class="hover:text-orange-500">Foundations &amp; Footings</a></li>
-              <li><a href="#services" class="hover:text-orange-500">Retaining &amp; Soil Nail Walls</a></li>
+              <li><a href="#services" class="hover:text-orange-500">Caissons &amp; Deep Foundations</a></li>
+              <li><a href="#services" class="hover:text-orange-500">Retaining Walls</a></li>
               <li><a href="#services" class="hover:text-orange-500">Concrete Repair &amp; Restoration</a></li>
               <li><a href="#services" class="hover:text-orange-500">Seismic Retrofitting</a></li>
-              <li><a href="#services" class="hover:text-orange-500">Slabs &amp; Tilt-Up</a></li>
+              <li><a href="#services" class="hover:text-orange-500">Slabs</a></li>
+              <li><a href="#services" class="hover:text-orange-500">Pools</a></li>
             </ul>
           </div>
 
           <div>
             <h3 class="text-xs font-bold uppercase tracking-widest text-white">Company</h3>
             <ul class="mt-4 space-y-2.5 text-sm">
+              <li><a href="#markets" class="hover:text-orange-500">Markets We Serve</a></li>
               <li><a href="#why-us" class="hover:text-orange-500">Why Choose KIA</a></li>
               <li><a href="#process" class="hover:text-orange-500">Our Process</a></li>
               <li><a href="#projects" class="hover:text-orange-500">Project Portfolio</a></li>
               <li><a href="#safety" class="hover:text-orange-500">Certifications &amp; Safety</a></li>
               <li><a href="#testimonials" class="hover:text-orange-500">Testimonials</a></li>
-              <li><a href="#coverage" class="hover:text-orange-500">Nationwide Coverage</a></li>
+              <li><a href="#coverage" class="hover:text-orange-500">Statewide Coverage</a></li>
               <li><a href="#faq" class="hover:text-orange-500">FAQ</a></li>
             </ul>
           </div>
@@ -1605,7 +1929,7 @@
         </div>
 
         <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-concrete-500 sm:flex-row">
-          <p>&copy; 2026 KIA Contractors Inc. All rights reserved. &middot; CA License #991941 &middot; Nationwide Service</p>
+          <p>&copy; 2026 KIA Contractors Inc. All rights reserved. &middot; CA License #991941 &middot; Statewide Service</p>
           <div class="flex items-center gap-5">
             <a href="#" class="hover:text-orange-500">Privacy Policy</a>
             <a href="#" class="hover:text-orange-500">Terms of Service</a>
