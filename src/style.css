@@ -104,7 +104,23 @@
 }
 
 /*
- * Floating WhatsApp button.
+ * Floating WhatsApp button position.
+ * Sits above the sticky mobile CTA bar, and drops back down at lg where that
+ * bar is hidden. Plain CSS rather than Alpine so it reacts to resize on its own.
+ */
+.wa-fab {
+  right: calc(1.5rem + env(safe-area-inset-right));
+  bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 1024px) {
+  .wa-fab {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+/*
+ * Floating WhatsApp button halo.
  * Kept in plain CSS (not a Tailwind utility) because the halo needs its own
  * keyframes, and it must stay put even if Alpine never hydrates.
  */

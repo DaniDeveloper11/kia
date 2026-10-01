@@ -176,6 +176,9 @@ Alpine.data('counter', (target, opts = {}) => ({
 Alpine.data('quoteForm', () => ({
   submitting: false,
   submitted: false,
+  submitError: '',
+  // Honeypot: hidden from people, irresistible to bots. Non-empty means spam.
+  website: '',
   form: {
     name: '',
     company: '',
@@ -211,18 +214,55 @@ Alpine.data('quoteForm', () => ({
     return Object.keys(errors).length === 0
   },
 
-  submit() {
+  async submit() {
     if (!this.validate()) return
 
     this.submitting = true
-    // Replace with a real endpoint (Formspree, HubSpot, your CRM, etc.).
-    // Simulated network delay so the UI state is easy to verify visually.
-    window.setTimeout(() => {
-      this.submitting = false
+    this.submitError = ''
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...this.form, website: this.website }),
+      })
+
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(result.error || 'We could not send your request.')
+
       this.submitted = true
-    }, 900)
+      track('quote_submitted', { project_type: this.form.projectType })
+    } catch (error) {
+      // Keep the filled-in form on screen so nothing the user typed is lost.
+      this.submitError =
+        error.message || 'We could not send your request. Please call us instead.'
+    } finally {
+      this.submitting = false
+    }
   },
 }))
+
+/**
+ * Provider-agnostic event tracking. Forwards to GA4 (gtag), GTM (dataLayer),
+ * or Cloudflare Web Analytics if any of them is present, and is a no-op
+ * otherwise — so adding an analytics snippet later needs no code change here.
+ */
+function track(event, params = {}) {
+  if (typeof window.gtag === 'function') window.gtag('event', event, params)
+  if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event, ...params })
+}
+
+// Outbound/contact intents worth measuring: phone taps, WhatsApp, and the
+// CTA buttons. Delegated so new [data-track] elements need no extra wiring.
+document.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-track], a[href^="tel:"], a[href*="wa.me"]')
+  if (!el) return
+
+  const name =
+    el.dataset.track ||
+    (el.getAttribute('href').startsWith('tel:') ? 'phone_click' : 'whatsapp_click')
+  track(name)
+})
 
 window.Alpine = Alpine
 Alpine.start()
