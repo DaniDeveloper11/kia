@@ -3,3 +3,9 @@ dist/
 .DS_Store
 *.log
 .vite/
+
+# Secretos locales de Cloudflare Pages Functions
+.dev.vars
+.env
+.env.local
+
