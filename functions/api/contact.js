@@ -62,10 +62,33 @@ export async function onRequestPost({ request, env }) {
   if (data.phone.replace(/\D/g, '').length < 10)
     return json(400, { error: 'Please enter a valid phone number.' })
 
-  const { RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL } = env
+  // Dashboard-pasted values often carry a trailing newline or stray spaces. An
+  // untrimmed key makes the Authorization header invalid, which throws before
+  // the request is even sent and surfaces as an opaque Cloudflare 502.
+  const trim = (value) => (typeof value === 'string' ? value.trim() : '')
+  const RESEND_API_KEY = trim(env.RESEND_API_KEY)
+  const CONTACT_TO_EMAIL = trim(env.CONTACT_TO_EMAIL)
+  const CONTACT_FROM_EMAIL = trim(env.CONTACT_FROM_EMAIL)
+
   if (!RESEND_API_KEY || !CONTACT_TO_EMAIL || !CONTACT_FROM_EMAIL) {
     console.error('Contact form is not configured: missing Resend environment variables.')
     return json(500, { error: 'The form is temporarily unavailable. Please call us instead.' })
+  }
+
+  // Resend only accepts "email@example.com" or "Name <email@example.com>", so a
+  // malformed variable is worth naming in the log instead of debugging a 422.
+  const MAILBOX = String.raw`[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+`
+  // A display name is required before the angle brackets: Resend rejects a bare
+  // "<noreply@example.com>" just as firmly as a domain with no mailbox at all.
+  const ADDRESS_RE = new RegExp(`^(?:[^\\s<>][^<>]*<${MAILBOX}>|${MAILBOX})$`)
+  for (const [name, value] of [
+    ['CONTACT_FROM_EMAIL', CONTACT_FROM_EMAIL],
+    ['CONTACT_TO_EMAIL', CONTACT_TO_EMAIL],
+  ]) {
+    if (!ADDRESS_RE.test(value)) {
+      console.error(`${name} is not a valid address: ${JSON.stringify(value)}`)
+      return json(500, { error: 'The form is temporarily unavailable. Please call us instead.' })
+    }
   }
 
   const rows = FIELDS.filter(([key]) => data[key])
@@ -76,22 +99,30 @@ export async function onRequestPost({ request, env }) {
     )
     .join('')
 
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: CONTACT_FROM_EMAIL,
-      to: [CONTACT_TO_EMAIL],
-      reply_to: data.email,
-      subject: `Quote request — ${data.company} (${data.location})`,
-      html:
-        `<h2 style="font-family:system-ui,sans-serif">New quote request</h2>` +
-        `<table style="font-family:system-ui,sans-serif;font-size:14px;border-collapse:collapse">${rows}</table>`,
-    }),
-  })
+  // Anything thrown here (bad header value, network failure) would otherwise
+  // bubble up as a bare Cloudflare 502 with no clue about what went wrong.
+  let response
+  try {
+    response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: CONTACT_FROM_EMAIL,
+        to: [CONTACT_TO_EMAIL],
+        reply_to: data.email,
+        subject: `Quote request \u2014 ${data.company} (${data.location})`,
+        html:
+          `<h2 style="font-family:system-ui,sans-serif">New quote request</h2>` +
+          `<table style="font-family:system-ui,sans-serif;font-size:14px;border-collapse:collapse">${rows}</table>`,
+      }),
+    })
+  } catch (error) {
+    console.error('Could not reach Resend:', error?.message || error)
+    return json(502, { error: 'We could not send your request. Please call us instead.' })
+  }
 
   if (!response.ok) {
     console.error('Resend rejected the message:', response.status, await response.text())
