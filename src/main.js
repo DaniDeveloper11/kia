@@ -231,6 +231,10 @@ Alpine.data('quoteForm', () => ({
       if (!response.ok) throw new Error(result.error || 'We could not send your request.')
 
       this.submitted = true
+      // The success panel lives in an x-if, so Alpine only inserts it now —
+      // after the initial createIcons() pass. Without a second pass its
+      // <i data-lucide> placeholder never becomes an SVG.
+      this.$nextTick(() => createIcons({ icons }))
       track('quote_submitted', { project_type: this.form.projectType })
     } catch (error) {
       // Keep the filled-in form on screen so nothing the user typed is lost.
@@ -267,7 +271,7 @@ document.addEventListener('click', (e) => {
 window.Alpine = Alpine
 Alpine.start()
 
-// Lucide icons are static (shown/hidden via x-show, never inserted after
-// load), so a single pass once Alpine has finished its initial render is
-// enough — no per-interaction re-init required.
+// Every icon present on first render is converted here. The one exception is
+// the quote form's success panel, which Alpine inserts later from an x-if and
+// which re-runs createIcons() itself.
 createIcons({ icons })
