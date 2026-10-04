@@ -1942,14 +1942,17 @@
     </div>
 
     <!-- =========================================================
-         FLOATING WHATSAPP BUTTON
-         TODO: replace 18005550191 with the real WhatsApp business line.
-         wa.me takes digits only — country code first, no +, spaces or dashes.
-    ========================================================== -->
+         FLOATING WHATSAPP BUTTON — disabled
+         Hidden at the client's request. To bring it back, move the block
+         below out of this comment and replace 18005550191 with the real
+         WhatsApp line. wa.me takes digits only — country code first, no
+         "+", spaces or dashes. The .wa-fab / .wa-halo rules in
+         src/style.css are left in place for that.
+
     <div
       class="wa-fab group fixed z-50 print:hidden"
     >
-      <!-- Label: shown on hover/focus from sm up, never on touch widths -->
+      Label: shown on hover/focus from sm up, never on touch widths
       <span
         class="pointer-events-none absolute right-16 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-md bg-navy-900 px-3 py-2 text-xs font-bold uppercase tracking-wide text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 sm:block"
         aria-hidden="true"
@@ -1970,5 +1973,6 @@
         </svg>
       </a>
     </div>
+    ========================================================== -->
   </body>
 </html>
