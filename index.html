@@ -1840,6 +1840,12 @@
                 </div>
 
                 <div class="sm:col-span-2">
+                  <!-- Turnstile renders here only when VITE_TURNSTILE_SITE_KEY is set
+                       at build time; the box stays empty and harmless otherwise. -->
+                  <div x-ref="turnstile" class="empty:hidden"></div>
+                </div>
+
+                <div class="sm:col-span-2">
                   <p
                     x-show="submitError"
                     x-cloak

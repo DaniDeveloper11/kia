@@ -171,6 +171,84 @@ Alpine.data('counter', (target, opts = {}) => ({
 }))
 
 /**
+ * Turnstile (Cloudflare's invisible CAPTCHA).
+ *
+ * The site key is public and baked in at build time. When it is absent the
+ * widget is skipped entirely and the server skips verification too, so the
+ * form keeps working before the keys are configured.
+ */
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || ''
+let turnstileScript
+
+function loadTurnstile() {
+  if (!TURNSTILE_SITE_KEY) return Promise.resolve(null)
+  if (!turnstileScript) {
+    turnstileScript = new Promise((resolve, reject) => {
+      const el = document.createElement('script')
+      el.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+      el.async = true
+      el.onload = () => resolve(window.turnstile)
+      el.onerror = () => reject(new Error('Turnstile failed to load'))
+      document.head.appendChild(el)
+    })
+  }
+  return turnstileScript
+}
+
+/**
+ * Campaign attribution for the quote form.
+ *
+ * The UTM tags only exist on the URL of the page the visitor landed on, and
+ * they are gone the moment they click through to /es/ or reload. Stashing them
+ * in sessionStorage on first sight keeps the attribution attached to whichever
+ * page they eventually submit from, and it expires with the tab — a later
+ * organic visit is not credited to an old campaign.
+ */
+const ATTRIBUTION_KEY = 'kia:attribution'
+const ATTRIBUTION_PARAMS = [
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_term',
+  'utm_content',
+  'gclid',
+  'fbclid',
+]
+
+function readAttribution() {
+  let stored = {}
+  try {
+    stored = JSON.parse(sessionStorage.getItem(ATTRIBUTION_KEY) || '{}')
+  } catch {
+    // Private mode and blocked storage both throw; attribution is optional.
+  }
+
+  const params = new URLSearchParams(window.location.search)
+  const fresh = {}
+  for (const key of ATTRIBUTION_PARAMS) {
+    const value = params.get(key)
+    if (value) fresh[key] = value.slice(0, 200)
+  }
+
+  // Only the first touch of the session wins, so an internal link carrying no
+  // tags cannot blank out the campaign that actually brought the visitor in.
+  if (!Object.keys(fresh).length) return stored
+
+  const attribution = {
+    ...fresh,
+    landing_page: window.location.pathname,
+    referrer: document.referrer ? new URL(document.referrer).hostname : '',
+  }
+
+  try {
+    sessionStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(attribution))
+  } catch {
+    // Not being able to persist it is fine: this pageview still sends it.
+  }
+  return attribution
+}
+
+/**
  * Quote / contact form with inline Alpine validation.
  */
 Alpine.data('quoteForm', () => ({
@@ -179,6 +257,28 @@ Alpine.data('quoteForm', () => ({
   submitError: '',
   // Honeypot: hidden from people, irresistible to bots. Non-empty means spam.
   website: '',
+  turnstileToken: '',
+  turnstileId: null,
+
+  init() {
+    loadTurnstile()
+      .then((turnstile) => {
+        if (!turnstile || !this.$refs.turnstile) return
+        this.turnstileId = turnstile.render(this.$refs.turnstile, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => {
+            this.turnstileToken = token
+          },
+          'expired-callback': () => {
+            this.turnstileToken = ''
+          },
+        })
+      })
+      .catch(() => {
+        // A blocked or failed widget must not lock people out of the form:
+        // the server decides whether a missing token is acceptable.
+      })
+  },
   form: {
     name: '',
     company: '',
@@ -224,7 +324,12 @@ Alpine.data('quoteForm', () => ({
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...this.form, website: this.website }),
+        body: JSON.stringify({
+          ...this.form,
+          website: this.website,
+          attribution: readAttribution(),
+          turnstileToken: this.turnstileToken,
+        }),
       })
 
       const result = await response.json().catch(() => ({}))
@@ -235,11 +340,19 @@ Alpine.data('quoteForm', () => ({
       // after the initial createIcons() pass. Without a second pass its
       // <i data-lucide> placeholder never becomes an SVG.
       this.$nextTick(() => createIcons({ icons }))
-      track('quote_submitted', { project_type: this.form.projectType })
+      track('quote_submitted', {
+        project_type: this.form.projectType,
+        utm_source: readAttribution().utm_source || '(direct)',
+      })
     } catch (error) {
       // Keep the filled-in form on screen so nothing the user typed is lost.
       this.submitError =
         error.message || 'We could not send your request. Please call us instead.'
+      // A token is single-use: without a reset the retry fails verification.
+      if (this.turnstileId !== null && window.turnstile) {
+        this.turnstileToken = ''
+        window.turnstile.reset(this.turnstileId)
+      }
     } finally {
       this.submitting = false
     }
