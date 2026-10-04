@@ -7,7 +7,7 @@
  *   RESEND_API_KEY     required — https://resend.com/api-keys
  *   CONTACT_TO_EMAIL   required — inbox that receives the leads
  *   CONTACT_FROM_EMAIL required — a sender on a domain verified in Resend
- *                                 (e.g. "KIA Website <noreply@kiacontractorsinc.com>")
+ *                                 (e.g. "KIA Website <noreply@kiacontractors.net>")
  *
  * The browser never sees the API key: it only ever talks to this endpoint.
  */

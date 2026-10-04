@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kiacontractorsinc.com/sitemap.xml
+Sitemap: https://kiacontractors.net/sitemap.xml

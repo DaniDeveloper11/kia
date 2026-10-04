@@ -44,12 +44,14 @@ through [Resend](https://resend.com). Set these under
 | Variable | Example |
 | --- | --- |
 | `RESEND_API_KEY` | `re_...` (mark as a secret) |
-| `CONTACT_TO_EMAIL` | `estimating@kiacontractorsinc.com` |
-| `CONTACT_FROM_EMAIL` | `KIA Website <noreply@kiacontractorsinc.com>` |
+| `CONTACT_TO_EMAIL` | `contact@kiacontractors.com` |
+| `CONTACT_FROM_EMAIL` | `KIA Website <noreply@kiacontractors.net>` |
 
 `CONTACT_FROM_EMAIL` must be on a domain verified in Resend, or delivery
-fails. Without these three the endpoint returns a 500 and the form shows
-"temporarily unavailable" instead of silently losing the lead.
+fails. Both addresses must be a bare `user@domain` or `Name <user@domain>`:
+Resend rejects a bare `<user@domain>` with a 422. Without these three the
+endpoint returns a 500 and the form shows "temporarily unavailable" instead
+of silently losing the lead.
 
 Test locally with `npx wrangler pages dev dist` (plain `vite preview` does
 not run Functions, so the form will 405 there).
